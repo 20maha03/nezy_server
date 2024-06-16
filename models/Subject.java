@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,6 +18,11 @@ public class Subject {
 	
 	private String subject_name_ta;
 	private String subject_name_en;
+	
+	@OneToOne
+	@JoinColumn(name = "topic_id")
+	private Topic topic;
+	
 	public int getId() {
 		return id;
 	}
@@ -37,11 +44,6 @@ public class Subject {
 	
 	@Override
 	public String toString() {
-		return "Subject [id=" + id + ", subject_name_ta=" + subject_name_ta + ", subject_name_en=" + subject_name_en
-				+ "]";
+		return "Subject [id=" + id + ", subject_name_ta=" + subject_name_ta + ", subject_name_en=" + subject_name_en + "]";
 	}
-	
-	
-	
-	
 }
