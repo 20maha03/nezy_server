@@ -22,4 +22,10 @@ public class QuestionService {
     		return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     	}
     }
+
+	public ResponseEntity<String> addNewQuestion(Question question) {
+		questionDao.save(question);
+		return new ResponseEntity<>("done",HttpStatus.CREATED);
+	}
 }
+
