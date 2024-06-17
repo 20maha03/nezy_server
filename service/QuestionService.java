@@ -27,5 +27,10 @@ public class QuestionService {
 		questionDao.save(question);
 		return new ResponseEntity<>("done",HttpStatus.CREATED);
 	}
+
+	public ResponseEntity<String> deleteOne(int id) {
+		questionDao.deleteById(id);
+		return new ResponseEntity<>("done",HttpStatus.OK);
+	}
 }
 
