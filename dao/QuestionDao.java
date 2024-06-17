@@ -6,6 +6,7 @@ import com.nezy_groups.models.Question;
 
 @Repository
 public interface QuestionDao extends JpaRepository<Question, Integer> {
+
 	
 	
 }
